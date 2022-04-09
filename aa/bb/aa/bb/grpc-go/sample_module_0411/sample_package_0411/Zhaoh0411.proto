@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+option go_package="github.com/activezhao/sample_repo_0411/aa/bb/grpc-go/sample_module_0411/sample_package_0411";
+
+
+service Zhaoh0411 {
+    rpc SayHello (HelloRequest) returns (HelloReply) {
+    option (google.api.http) = {
+      post: "/v1/example/echo"
+      body: "*"
+    };
+  }
+}
+
+
+message HelloRequest {
+    string msg = 1;
+}
+message HelloReply {
+    string msg = 1;
+    string code = 2;
+}
